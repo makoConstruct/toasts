@@ -1,0 +1,22 @@
+{
+  "name": "toasts",
+  "version": "1.0.0",
+  "description": "Show transient messages",
+  "main": "toasts.js",
+  "devDependencies": {
+    "typescript": "^2.0.10",
+    "webpack": "^1.13.3",
+    "ts-loader": "^1.2.2"
+  },
+  "keywords": [
+    "toast",
+    "message",
+    "popup"
+  ],
+  "scripts": {
+    "build-ambient": "webpack --config webpack-ambient.js",
+    "build": "webpack --config webpack-commonjs.js"
+  },
+  "author": "mako yass",
+  "license": "MIT"
+}

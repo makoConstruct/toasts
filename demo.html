@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>toasts demo</title>
+	<link href="https://fonts.googleapis.com/css?family=Economica" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="prism.css">
+	<link rel="stylesheet" type="text/css" href="page.css">
+	<style type="text/css">
+		.toast{
+			position:fixed;
+			transition: all 200ms ease-in-out;
+			cursor:pointer;
+			/* ^ without these, it wouldn't look right at all. */
+			
+			opacity:0; /*gets turned on by risingToast*/
+			background-color: rgba(255,255,255, 0.7);
+			padding: 5px;
+			border-radius: 5px;
+			border:3px solid;
+		}
+		.toast > span {
+			font-size:23px;
+		}
+		.risingToast{
+			opacity:1;
+		}
+		.risingToast.fadingToast{
+			transform: translate3d(18px,0,0) scale(0.87);
+			opacity:0;
+		}
+	</style>
+	<script type="text/javascript" src="toasts-ambient.js"></script>
+	<script type="text/javascript">
+		
+		var toasts = new Toasts({
+			fadeDuration:200,
+			separation:13,
+			cssWay:{
+				elementClass:'toast',
+				fadeInClass:'risingToast',
+				fadeOutClass:'fadingToast'
+			}
+		})
+		
+		document.addEventListener('DOMContentLoaded', ()=>{
+			function getel(name){ return document.getElementById(name) }
+			
+			getel('sayHello').addEventListener('click', ()=>{
+				toasts.post('Hello there.')
+			})
+			getel('warning').addEventListener('click', ()=>{
+				toasts.post(
+					"look out! something is going on! things are not as they once were!",
+					{lifespan:Infinity, color:'rgba(255,130,30, 0.7)'}
+				)
+			})
+			getel('hotTake').addEventListener('click', ()=>{
+				toasts.post("The emperor is only pretending to believe he isn't naked!")
+			})
+		})
+	
+	</script>
+</head>
+<body>
+	<script src="prism.js"></script>
+	<h1>
+		toasts<span class="minor">.js</span><a href="https://github.com/makoConstruct/toasts">code</a><a href="https://github.com/makoConstruct/toasts/README.md">documentation</a>
+	</h1>
+	
+	<pre><code class="language-js">var toasts = new Toasts({
+	fadeDuration:200,
+	cssWay:{
+		elementClass:'toast',
+		fadeInClass:'risingToast',
+		fadeOutClass:'fadingToast'
+	}
+})
+
+document.addEventListener('DOMContentLoaded', ()=>{
+	function getel(name){ return document.getElementById(name) }
+	
+	getel('sayHello').addEventListener('click', ()=>{
+		toasts.post('Welcome, friend.')
+	})
+	getel('warning').addEventListener('click', ()=>{
+		toasts.post(
+			"look out! something is going on! things are not as they once were!",
+			{lifespan:Infinity, color:'#FFD744'}
+		)
+	})
+	getel('hotTake').addEventListener('click', ()=>{
+		toasts.post("The emperor is only pretending to believe he isn't naked!")
+	})
+})</code></pre>
+	<button id="sayHello">hello</button>
+	<button id="warning">warning</button>
+	<button id="hotTake">hot take</button>
+</body>
+</html>
