@@ -3,6 +3,7 @@
 <head>
 	<title>toasts demo</title>
 	<link href="https://fonts.googleapis.com/css?family=Economica" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="prism.css">
 	<link rel="stylesheet" type="text/css" href="page.css">
 	<style type="text/css">
@@ -13,10 +14,11 @@
 			/* ^ without these, it wouldn't look right at all. */
 			
 			opacity:0; /*gets turned on by risingToast*/
-			background-color: rgba(255,255,255, 0.7);
+			background-color: rgba(0,0,0, 0.7);
+			color:white;
 			padding: 5px;
 			border-radius: 5px;
-			border:3px solid;
+			font-family: 'Roboto Condensed', sans-serif;
 		}
 		.toast > span {
 			font-size:23px;
@@ -50,12 +52,12 @@
 			})
 			getel('warning').addEventListener('click', ()=>{
 				toasts.post(
-					"look out! something is going on! things are not as they once were!",
-					{lifespan:Infinity, color:'rgba(255,130,30, 0.7)'}
+					"Look out! Something is happening! Things are changing!",
+					{lifespan:Infinity, color:'rgba(235,130,0, 0.7)'}
 				)
 			})
 			getel('hotTake').addEventListener('click', ()=>{
-				toasts.post("The emperor is only pretending to believe he isn't naked!")
+				toasts.post("The emperor knows he is naked and is only pretending not to!")
 			})
 		})
 	
