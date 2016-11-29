@@ -2,12 +2,11 @@
 
 Post popups over the page
 
-You might use it in situations where: A query goes wrong, and you want to notify the user. The user has disconnected. The user has received a minor notification
-These situations don't necessarily require any action on the part of the user. Sometimes it's okay for the user to miss the notification altogether if they're not paying attention.
+You might use it in situations where: A query goes wrong, and you want to notify the user. The user has disconnected. The user has received a minor notification.
 
-But you want the information to be available for those who look. So you post a toast.
+These situations don't necessarily require any action on the part of the user. Sometimes it's okay for the user to miss the notification altogether if they're not paying attention. But you want the information to be available for those who look. So you post a toast.
 
-see the [Demo](http://makopool.com/toasts/demo.html)
+see the [demo](http://makopool.com/toasts/demo.html)
 
 ##Primary Features
 
@@ -20,7 +19,7 @@ see the [Demo](http://makopool.com/toasts/demo.html)
 
 ##Example
 
-(did you see the [Demo](http://makopool.com/toasts/demo.html) yet?)
+(did you see the [demo](http://makopool.com/toasts/demo.html) yet?)
 
 ```javascript
 var Toasts = require('toasts')
@@ -71,7 +70,7 @@ generationFunction: (msg:string, cfg, invokeDestruction:()=>void)=> {
 		element, //:HTMLElement. The toast html element that will be displayed
 		fadeIn, //:()=>void. optional. A function that will be called immediately after element is added to the page. You can use it to launch fade in animations.
 		fadeOut, //:()=>void. optional. A function that will be called shortly before the element is removed from the page. You can use it to launch fade out animations.
-		fadeDuration, //:number. optional, defaulting to the toast.fadeDuration of the toaster. The number of milliseconds after fadeOut before the element is removed from the page (allows enough time for a fade out animation.
+		fadeDuration, //:number. optional, defaulting to the toast.fadeDuration of the toaster. The number of milliseconds after fadeOut before the element is removed from the page (allows time for a fade out animation.)
 		lifespan //:number. optional, defaulting to toast's global setting.
 	}
 }
