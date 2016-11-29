@@ -3,7 +3,7 @@
 It lets you post transient popups. You might use it in situations where: A query goes wrong, and you want to notify the user. The user has disconnected. The user has received a minor notification.
 These situations don't necessarily require any action on the part of the user. It's not always terribly important that the user notice the notification at all. But you want the information to be available if they're paying attention. So you post a toast.
 
-see the Demo
+see the [Demo](http://makopool.com/toasts/demo.html)
 
 ##Features
 
@@ -18,7 +18,7 @@ see the Demo
 
 ##Example
 
-(did you see the Demo yet?)
+(did you see the [Demo](http://makopool.com/toasts/demo.html) yet?)
 
 ```javascript
 var Toasts = require('toasts')
@@ -36,7 +36,7 @@ toaster.post("admittedly quite far away", {color:'black'})
 ##API
 
 ```javascript
-new Toast(config)
+new Toasts(config)
 config: {
 	gravity:[number, number] = [1,-1], //(= upper right). a pair of numbers which specify which corner of the screen the toasts will appear in. [-1,1] is left, bottom. [1,1] is right, bottom. You get the idea.
 	fadeDuration:number = 200, // the number of milliseconds after a toast is cleared before it's cut from the page. It's needed to make sure disappearance animations have enough time to complete before removal. 200 is a good number, but if you set your own number in your CSS, you might want to change this.
@@ -45,12 +45,18 @@ config: {
 	defaults: {lifespan, color} = {lifespan:'suggested', color:'black'} // allows you to set default configurations for individual toasts. lifespan can be either 'suggested' or the number of milliseconds. 'suggested' determines the lifespan of each post from the length of the message.
 }
 ```
+Creates a toaster.
+
+
 
 ```
-Toast.post(msg:string, cfg:{lifespan, color} = Toast.defaults):()=>void //posts a toast
+Toasts.post(msg:string, cfg = Toasts.defaults):()=>void //posts a toast
 ```
-returns a lambda that can be be called to delete the toast
+Toasts. returns a lambda that can be be called to delete the toast.
 
+
+
+###Specifying a custom generation function
 
 ```
 generationFunction: (msg:string, cfg, invokeDestruction:()=>void)=> {
