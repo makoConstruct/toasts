@@ -21,7 +21,7 @@ see the [demo](http://makopool.com/toasts/demo.html)
 
 (did you see the [demo](http://makopool.com/toasts/demo.html) yet?)
 
-```javascript
+```typescript
 var Toasts = require('toasts')
 
 var toaster = new Toasts({gravity:[1,1] /*meaning [positive, positive], meaning positioned at the bottom right corner of the screen*/, defaults:{lifespan:Infinity /*= they don't expire. The user has to click on them*/, color:'blue' /*the generation function will be passed the color 'blue'. It might make the background blue. It might just show a blue dot. That's down to the generation function.*/}})
@@ -36,7 +36,7 @@ toaster.post("admittedly quite far away", {color:'black'})
 
 ##API
 
-```javascript
+```typescript
 new Toasts(config)
 config: {
 	gravity:[number, number] = [1,-1], //(= upper right). a pair of numbers which specify which corner of the screen the toasts will appear in. [-1,1] is left, bottom. [1,1] is right, bottom. You get the idea.
@@ -60,7 +60,7 @@ Toasts. returns a lambda that can be be called to delete the toast.
 
 ###Specifying a custom generation function
 
-```
+```typescript
 generationFunction: (msg:string, cfg, invokeDestruction:()=>void)=> {
 	// `msg` is the message you're to display. `cfg` may contain color and lifespan settings. `invokeDestruction` is a callback you can bind to events to dismiss the toast, once it's been created (if you call it before your generationFunction returns, well, I doubt you have a good reason for doing that, and it wont work out)
 	//... your code here ...
