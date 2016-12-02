@@ -27,7 +27,7 @@
 			opacity:1;
 		}
 		.risingToast.fadingToast{
-			transform: translate3d(18px,0,0) scale(0.87);
+			transform: translate3d(12px,0,0) scale(0.9);
 			opacity:0;
 		}
 	</style>
@@ -48,7 +48,7 @@
 			function getel(name){ return document.getElementById(name) }
 			
 			getel('sayHello').addEventListener('click', ()=>{
-				toasts.post('Hello there.')
+				toasts.post('Welcome, friend.')
 			})
 			getel('warning').addEventListener('click', ()=>{
 				toasts.post(
@@ -90,12 +90,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
 	})
 	getel('warning').addEventListener('click', ()=>{
 		toasts.post(
-			"look out! something is going on! things are not as they once were!",
-			{lifespan:Infinity, color:'#FFD744'}
+			"Look out! Something is happening! Things are changing!",
+			{lifespan:Infinity, color:'rgba(235,130,0, 0.7)'}
 		)
 	})
 	getel('hotTake').addEventListener('click', ()=>{
-		toasts.post("The emperor is only pretending to believe he isn't naked!")
+		toasts.post("The emperor knows he is naked and is only pretending not to!")
 	})
 })</code></pre>
 </body>

@@ -24,7 +24,13 @@ see the [demo](http://makopool.com/toasts/demo.html)
 ```typescript
 var Toasts = require('toasts')
 
-var toaster = new Toasts({gravity:[1,1] /*meaning [positive, positive], meaning positioned at the bottom right corner of the screen*/, defaults:{lifespan:Infinity /*= they don't expire. The user has to click on them*/, color:'blue' /*the generation function will be passed the color 'blue'. It might make the background blue. It might just show a blue dot. That's down to the generation function.*/}})
+var toaster = new Toasts({
+	gravity:[1,1] /*meaning [positive, positive], meaning positioned at the bottom right corner of the screen*/,
+	defaults:{
+		lifespan:Infinity /*= they don't expire. The user has to click on them*/,
+		color:'blue' /*the generation function will be passed the color 'blue'. It might make the background blue. It might just show a blue dot. That's down to the generation function.*/
+	}
+})
 //we haven't specified a generation function though, so the notifications will have the default look. You probably don't want that. You're probably not so lazy or tasteless as to just use whatever is there instead of specifying your own look and structure. In this case you should probably take a look at the generation API below.
 
 toaster.post("watch out")
