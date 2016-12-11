@@ -43,14 +43,14 @@ function positionMessageBoxAlong(v:HTMLElement, along:number, gravity:[number, n
 }
 function suggestedLifespanFor(msg:string):number {
 	var base = 2500
-	var lettersPerSecond = 45/1000
+	var lettersPerSecond = 11/1000
 	return base + msg.length/lettersPerSecond
 }
 
 
 
 type MessageBox = any //expected to contain, element:HTMLElement, fadeOut:()=>void, fadeIn:()=>void, fadeDuration:number
-class Toasts{
+export class Toasts{
 	defaults = {
 		lifespan: 'suggested'
 	}
@@ -66,9 +66,7 @@ class Toasts{
 		ret.style.margin = '5px'
 		ret.style.opacity = '0'
 		ret.style.cursor = 'pointer'
-		ret.style['min-width'] = '300px'
 		ret.style['border-radius'] = '4px'
-		ret.style['background-color'] = config.color
 		ret.textContent = msg
 		ret.addEventListener('click', invokeDestruction)
 		return {
@@ -86,7 +84,6 @@ class Toasts{
 			this.generate = (msg:string, config, invokeDestruction)=> {
 				var ret = document.createElement('div')
 				ret.classList.add(cfg.cssWay.elementClass || 'toastbox')
-				if(config.color) ret.style['background-color'] = config.color
 				var tcon = document.createElement('span')
 				tcon.textContent = msg
 				ret.appendChild(tcon)
@@ -156,6 +153,7 @@ class Toasts{
 		}else if(this.gravity[1] == 1){
 			msgbox.element.style.bottom = this.separation + (after ? after.offsetLeft : 0) + 'px'
 		}
+		if(cfg.withClass){ msgbox.element.classList.add(cfg.withClass) }
 		document.body.appendChild(msgbox.element)
 		this.messages.push(msgbox)
 		setTimeout(msgbox.fadeIn, 16) //wont animate if we do it right away
@@ -170,6 +168,3 @@ class Toasts{
 		return disappearance
 	}
 }
-
-
-export = Toasts

@@ -1,7 +1,7 @@
 exports.default = {
 	"entry": "./toasts.ts",
 	"output": {
-		"library": "Toasts",
+		"library": "toasts",
 		"libraryTarget": "commonjs",
 		"filename": "toasts.js"
 	},

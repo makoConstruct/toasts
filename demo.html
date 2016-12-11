@@ -30,11 +30,14 @@
 			transform: translate3d(12px,0,0) scale(0.9);
 			opacity:0;
 		}
+		.bigProblem{
+			background-color:#FF3B1C;
+		}
 	</style>
 	<script type="text/javascript" src="toasts-ambient.js"></script>
 	<script type="text/javascript">
 		
-		var toasts = new Toasts({
+		var toaster = new toasts.Toasts({
 			fadeDuration:200,
 			separation:13,
 			cssWay:{
@@ -48,16 +51,16 @@
 			function getel(name){ return document.getElementById(name) }
 			
 			getel('sayHello').addEventListener('click', ()=>{
-				toasts.post('Welcome, friend.')
+				toaster.post('Welcome, friend.')
 			})
 			getel('warning').addEventListener('click', ()=>{
-				toasts.post(
+				toaster.post(
 					"Look out! Something is happening! Things are changing!",
-					{lifespan:Infinity, color:'rgba(235,130,0, 0.7)'}
+					{lifespan:Infinity, withClass:'bigProblem'}
 				)
 			})
 			getel('hotTake').addEventListener('click', ()=>{
-				toasts.post("The emperor knows he is naked and is only pretending not to!")
+				toaster.post("The emperor knows he is naked and is only pretending not to!")
 			})
 		})
 	
@@ -73,8 +76,9 @@
 	<button id="warning">warning</button>
 	<button id="hotTake">hot take</button>
 	
-	<pre><code class="language-js">var toasts = new Toasts({
+	<pre><code class="language-js">var toaster = new toasts.Toasts({
 	fadeDuration:200,
+	separation:13,
 	cssWay:{
 		elementClass:'toast',
 		fadeInClass:'risingToast',
@@ -86,16 +90,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
 	function getel(name){ return document.getElementById(name) }
 	
 	getel('sayHello').addEventListener('click', ()=>{
-		toasts.post('Welcome, friend.')
+		toaster.post('Welcome, friend.')
 	})
 	getel('warning').addEventListener('click', ()=>{
-		toasts.post(
+		toaster.post(
 			"Look out! Something is happening! Things are changing!",
-			{lifespan:Infinity, color:'rgba(235,130,0, 0.7)'}
+			{lifespan:Infinity, withClass:'bigProblem'}
 		)
 	})
 	getel('hotTake').addEventListener('click', ()=>{
-		toasts.post("The emperor knows he is naked and is only pretending not to!")
+		toaster.post("The emperor knows he is naked and is only pretending not to!")
 	})
 })</code></pre>
 </body>

@@ -17,6 +17,12 @@
     "build-ambient": "webpack --config webpack-ambient.js",
     "build": "webpack --config webpack-commonjs.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/makoConstruct/toasts.git"
+  },
   "author": "mako yass",
+  "website": "http://makopool.com/toasts/demo.html",
+  "homepage": "https://github.com/makoConstruct/toasts",
   "license": "MIT"
 }
