@@ -6,5 +6,8 @@ exports.default = {
 		"filename": "toasts.js"
 	},
 	"resolve": { "extensions": ["", ".webpack.js", ".web.js", ".ts", ".js"] },
-	"module": { "loaders": [ { "test": /\.ts$/, "loader": "ts-loader" } ] }
+	"module": { "loaders": [ { "test": /\.ts$/, "loader": "ts-loader" } ] },
+	ts: {
+		visualStudioErrorFormat:true
+	}
 }

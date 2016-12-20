@@ -215,7 +215,7 @@
 			"file": "webpack-ambient.js",
 			"settings":
 			{
-				"buffer_size": 416,
+				"buffer_size": 417,
 				"line_ending": "Unix"
 			}
 		},
@@ -231,7 +231,15 @@
 			"file": "toasts.ts",
 			"settings":
 			{
-				"buffer_size": 5688,
+				"buffer_size": 5596,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "toasts.d.ts",
+			"settings":
+			{
+				"buffer_size": 180,
 				"line_ending": "Unix"
 			}
 		},
@@ -239,7 +247,27 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 5501,
+				"buffer_size": 6335,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "curl https://www.cloudflare.com/api_json.html -d 'a=zone_file_purge' -d 'tkn=33647207f35f05d9755092dfdf601c65cc7cb' -d 'email=marcus.yass@gmail.com' -d 'z=makopool.com' -d 'url=http://makopool.com/toasts/demo.html'\ncurl https://www.cloudflare.com/api_json.html -d 'a=zone_file_purge' -d 'tkn=33647207f35f05d9755092dfdf601c65cc7cb' -d 'email=marcus.yass@gmail.com' -d 'z=makopool.com' -d 'url=http://makopool.com/toasts/toasts-ambient.html'\ncurl https://www.cloudflare.com/api_json.html -d 'a=zone_file_purge' -d 'tkn=33647207f35f05d9755092dfdf601c65cc7cb' -d 'email=marcus.yass@gmail.com' -d 'z=makopool.com' -d 'url=http://makopool.com/toasts/page.css'",
+			"settings":
+			{
+				"buffer_size": 653,
+				"line_ending": "Unix",
+				"name": "curl https://www.cloudflare.com/api_json.html -d '"
+			}
+		},
+		{
+			"contents": "curl https://www.cloudflare.com/api_json.html -d 'a=zone_file_purge' -d 'tkn=33647207f35f05d9755092dfdf601c65cc7cb' -d 'email=marcus.yass@gmail.com' -d 'z=makopool.com' -d 'url=http://flow.makopool.com/assets/mainpage.js'\n\n#adds subdomain\ncurl https://www.cloudflare.com/api_json.html -d 'a=rec_new' -d 'tkn=33647207f35f05d9755092dfdf601c65cc7cb' -d 'email=marcus.yass@gmail.com' -d 'z=makopool.com' -d 'ttl=1' -d 'type=A' -d 'name=parked' -d 'content=54.212.63.93'\n\n#purge entire domain:\ncurl https://www.cloudflare.com/api_json.html  -d 'a=fpurge_ts'  -d 'tkn=33647207f35f05d9755092dfdf601c65cc7cb'  -d 'email=marcus.yass@gmail.com'  -d 'z=themanifoldrealms.makopool.com'  -d 'v=1'\n\n\ncurl https://www.cloudflare.com/api_json.html  -d 'a=fpurge_ts'  -d 'tkn=33647207f35f05d9755092dfdf601c65cc7cb'  -d 'email=marcus.yass@gmail.com'  -d 'z=flow.makopool.com'  -d 'v=1'",
+			"file": "/home/mako/programming/web/purge command",
+			"file_size": 666,
+			"file_write_time": 131060294234909407,
+			"settings":
+			{
+				"buffer_size": 867,
 				"line_ending": "Unix"
 			}
 		},
@@ -247,7 +275,7 @@
 			"file": "toasts.js",
 			"settings":
 			{
-				"buffer_size": 8581,
+				"buffer_size": 8472,
 				"line_ending": "Unix"
 			}
 		},
@@ -263,15 +291,7 @@
 			"file": "demo.html",
 			"settings":
 			{
-				"buffer_size": 2832,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "toasts-ambient.js",
-			"settings":
-			{
-				"buffer_size": 8578,
+				"buffer_size": 2922,
 				"line_ending": "Unix"
 			}
 		},
@@ -843,9 +863,11 @@
 	],
 	"file_history":
 	[
+		"/home/mako/programming/web/toasts/node_modules/ts-loader/node_modules/colors/ReadMe.md",
+		"/home/mako/programming/web/toasts/toasts-ambient.js",
+		"/home/mako/programming/web/toasts/node_modules/typescript/lib/typingsInstaller.js",
 		"/home/mako/programming/web/toasts/toasts.d.ts",
 		"/home/mako/programming/web/toasts/README.md",
-		"/home/mako/programming/web/toasts/node_modules/ts-loader/node_modules/colors/ReadMe.md",
 		"/home/mako/programming/web/toasts/webpack.config.js",
 		"/home/mako/programming/web/toasts/",
 		"/home/mako/programming/web/toasts/toastbox.js",
@@ -968,9 +990,7 @@
 		"/home/mako/programming/starry/webstarry/src/resource.js",
 		"/home/mako/programming/starry/linux/makefile",
 		"/home/mako/programming/starry/android/src/jni/SDL/Android.mk",
-		"/home/mako/programming/starry/android/src/jni/SDL/include/SDL_test.h",
-		"/home/mako/programming/starry/android/SDL/src/dynapi/SDL_dynapi.c",
-		"/home/mako/programming/res/SDL2-2.0.3/src/dynapi/SDL_dynapi.c"
+		"/home/mako/programming/starry/android/src/jni/SDL/include/SDL_test.h"
 	],
 	"find":
 	{
@@ -991,6 +1011,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"post(",
+			"separation",
+			"default",
+			"withClass",
+			"toasts",
+			"generationFunction",
+			"cfg.generation",
+			"color",
+			"background-col",
+			"cfg",
+			"withcss",
+			"withclass",
+			", //",
+			"*",
+			", //",
+			"cssway",
+			"notify",
 			"specif",
 			"demo",
 			"fadeIn",
@@ -1101,24 +1138,7 @@
 			"configurationc",
 			"configurationChanged",
 			"from_str",
-			"offTime",
-			"onTime",
-			"startingDate",
-			"config",
-			"Config",
-			"Debug",
-			"extern crate",
-			"q",
-			"get",
-			"use",
-			"startTime",
-			"starttime",
-			";",
-			"console.log",
-			"  ",
-			"'",
-			"\"",
-			"    "
+			"offTime"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1139,7 +1159,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 8,
 			"sheets":
 			[
 				{
@@ -1168,7 +1188,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
@@ -1198,7 +1218,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -1207,15 +1227,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 416,
+						"buffer_size": 417,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8,
-								8
+								255,
+								255
 							]
 						],
 						"settings":
@@ -1226,7 +1246,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -1254,7 +1274,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -1263,7 +1283,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5688,
+						"buffer_size": 5596,
 						"regions":
 						{
 							"bookmarks":
@@ -1279,8 +1299,8 @@
 						"selection":
 						[
 							[
-								5688,
-								5688
+								4033,
+								4033
 							]
 						],
 						"settings":
@@ -1289,33 +1309,117 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 133.0,
+						"translation.y": 1589.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "README.md",
+					"file": "toasts.d.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5501,
+						"buffer_size": 180,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								180,
+								180
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better TypeScript/TypeScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6335,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4288,
+								4288
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 735.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 653,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								591,
+								591
+							]
+						],
+						"settings":
+						{
+							"auto_name": "curl https://www.cloudflare.com/api_json.html -d '",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/home/mako/programming/web/purge command",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 867,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								867,
+								867
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1325,12 +1429,12 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 9,
 					"file": "toasts.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8581,
+						"buffer_size": 8472,
 						"regions":
 						{
 						},
@@ -1355,7 +1459,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 10,
 					"file": "tsconfig.json",
 					"semi_transient": false,
 					"settings":
@@ -1379,24 +1483,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 11,
 					"file": "demo.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2832,
+						"buffer_size": 2922,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1040,
-								1040
+								991,
+								991
 							]
 						],
 						"settings":
@@ -1408,40 +1512,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "toasts-ambient.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8578,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
+					"buffer": 12,
 					"file": "/home/mako/text/recycled tweets.txt",
 					"semi_transient": false,
 					"settings":
@@ -1465,11 +1540,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 13,
 					"file": "page.css",
 					"semi_transient": false,
 					"settings":
@@ -1494,7 +1569,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 10,
 					"type": "text"
 				}
 			]
@@ -1502,7 +1577,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 22.0
+		"height": 38.0
 	},
 	"input":
 	{
@@ -1553,8 +1628,60 @@
 		"selected_items":
 		[
 			[
+				"re",
+				"README.md"
+			],
+			[
+				"rea",
+				"node_modules/ts-loader/node_modules/colors/ReadMe.md"
+			],
+			[
 				"readm",
 				"README.md"
+			],
+			[
+				"tod",
+				"toasts.d.ts"
+			],
+			[
+				"to",
+				"toasts.ts"
+			],
+			[
+				"ti",
+				"node_modules/typescript/lib/typingsInstaller.js"
+			],
+			[
+				"toas",
+				"toasts.js"
+			],
+			[
+				"demo",
+				"demo.html"
+			],
+			[
+				"toastam",
+				"toasts-ambient.js"
+			],
+			[
+				"toa",
+				"toasts.ts"
+			],
+			[
+				"toasts",
+				"toasts.ts"
+			],
+			[
+				"webcom",
+				"webpack-commonjs.js"
+			],
+			[
+				"web",
+				"webpack-ambient.js"
+			],
+			[
+				"pack",
+				"package.json"
 			],
 			[
 				"tdts",
@@ -1573,40 +1700,16 @@
 				"page.css"
 			],
 			[
-				"demo",
-				"demo.html"
-			],
-			[
 				"reamd",
 				"node_modules/ts-loader/node_modules/colors/ReadMe.md"
-			],
-			[
-				"toasts",
-				"toasts.ts"
 			],
 			[
 				"ream",
 				"node_modules/ts-loader/node_modules/colors/ReadMe.md"
 			],
 			[
-				"pack",
-				"package.json"
-			],
-			[
 				"com",
 				"webpack-commonjs.js"
-			],
-			[
-				"toas",
-				"toasts.js"
-			],
-			[
-				"toa",
-				"toasts.ts"
-			],
-			[
-				"web",
-				"webpack-require.js"
 			],
 			[
 				"webapm",
@@ -2035,34 +2138,6 @@
 			[
 				"pt",
 				"src/android/assets/playerTheme.termpose"
-			],
-			[
-				"termp",
-				"~/programming/termpose/src/main/scala/Termpose.scala"
-			],
-			[
-				"tescal",
-				"src/teste/src/Teste.scala"
-			],
-			[
-				"tesja",
-				"src/teste/src/Teste.java"
-			],
-			[
-				"teste",
-				"~/programming/starry/src/teste/Teste.java"
-			],
-			[
-				"test.sca",
-				"~/programming/starry/src/teste/Teste.scala"
-			],
-			[
-				"buig",
-				"src/desktop/build.gradle"
-			],
-			[
-				"desktop",
-				"src/desktop/src/com/makopool/starry/desktop/DesktopLauncher.java"
 			]
 		],
 		"width": 0.0

@@ -5,7 +5,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Economica" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="prism.css">
-	<link rel="stylesheet" type="text/css" href="page.css">
+	<link rel="stylesheet" type="text/css" href="/toasts/page.css">
 	<style type="text/css">
 		.toast{
 			position:fixed;
@@ -40,6 +40,7 @@
 		var toaster = new toasts.Toasts({
 			fadeDuration:200,
 			separation:13,
+			gravity:[1,1],
 			cssWay:{
 				elementClass:'toast',
 				fadeInClass:'risingToast',
@@ -51,7 +52,7 @@
 			function getel(name){ return document.getElementById(name) }
 			
 			getel('sayHello').addEventListener('click', ()=>{
-				toaster.post('Welcome, friend.')
+				toaster.post('Welcome, friend.', {lifespan:1100})
 			})
 			getel('warning').addEventListener('click', ()=>{
 				toaster.post(
@@ -69,7 +70,7 @@
 <body>
 	<script src="prism.js"></script>
 	<h1>
-		toasts<span class="minor">.js</span><a href="https://github.com/makoConstruct/toasts">code</a><a href="https://github.com/makoConstruct/toasts/README.md">documentation</a>
+		toasts<span class="minor">.js</span><a href="https://github.com/makoConstruct/toasts">code</a><a href="https://github.com/makoConstruct/toasts/blob/master/README.md">documentation</a>
 	</h1>
 	
 	<button id="sayHello">hello</button>
@@ -79,6 +80,7 @@
 	<pre><code class="language-js">var toaster = new toasts.Toasts({
 	fadeDuration:200,
 	separation:13,
+	gravity:[1,1],
 	cssWay:{
 		elementClass:'toast',
 		fadeInClass:'risingToast',
@@ -90,7 +92,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 	function getel(name){ return document.getElementById(name) }
 	
 	getel('sayHello').addEventListener('click', ()=>{
-		toaster.post('Welcome, friend.')
+		toaster.post('Welcome, friend.', {lifespan:1100})
 	})
 	getel('warning').addEventListener('click', ()=>{
 		toaster.post(

@@ -97,7 +97,8 @@ exports["toasts"] =
 	            lifespan: 'suggested'
 	        };
 	        this.fadeDuration = 200; //milliseconds
-	        this.separation = 20;
+	        this.verticalSeparation = 20;
+	        this.horizontalSeparation = 20;
 	        this.gravity = [1, -1];
 	        this.messages = [];
 	        this.generate = function (msg, config, invokeDestruction) {
@@ -148,6 +149,16 @@ exports["toasts"] =
 	        if (cfg.defaults) {
 	            copyInObject(this.defaults, cfg.defaults);
 	        }
+	        if (cfg.separation) {
+	            this.verticalSeparation = cfg.separation;
+	            this.horizontalSeparation = cfg.separation;
+	        }
+	        if (cfg.horizontalSeparation) {
+	            this.horizontalSeparation = cfg.horizontalSeparation;
+	        }
+	        if (cfg.verticalSeparation) {
+	            this.verticalSeparation = cfg.verticalSeparation;
+	        }
 	    }
 	    Toasts.prototype.post = function (msg, config) {
 	        var _this = this;
@@ -162,14 +173,14 @@ exports["toasts"] =
 	                var i = _this.messages.indexOf(msgbox);
 	                removeArrayItem(_this.messages, i);
 	                //reposition remaining items
-	                var acc = _this.gravity[1] > 0 ?
-	                    msgbox.element.offsetTop + msgbox.element.offsetHeight :
-	                    msgbox.element.offsetTop;
+	                var acc = _this.gravity[1] < 0 ?
+	                    msgbox.element.offsetTop :
+	                    window.innerHeight - msgbox.element.offsetTop - msgbox.element.offsetHeight;
 	                document.body.removeChild(msgbox.element);
 	                while (i < _this.messages.length) {
 	                    var tel = _this.messages[i].element;
 	                    positionMessageBoxAlong(tel, acc, _this.gravity);
-	                    acc += _this.separation + tel.offsetHeight;
+	                    acc += _this.verticalSeparation + tel.offsetHeight;
 	                    ++i;
 	                }
 	                //reduce potential for leaks if user accidentally holds onto a ref of disappearance
@@ -189,17 +200,17 @@ exports["toasts"] =
 	        });
 	        var endMsgbox = this.messages.length ? this.messages[this.messages.length - 1] : null;
 	        var after = endMsgbox && endMsgbox.element;
-	        if (this.gravity[0] == -1) {
-	            msgbox.element.style.left = this.separation + 'px';
+	        if (this.gravity[0] < 0) {
+	            msgbox.element.style.left = this.horizontalSeparation + 'px';
 	        }
-	        else if (this.gravity[0] == 1) {
-	            msgbox.element.style.right = this.separation + 'px';
+	        else {
+	            msgbox.element.style.right = this.horizontalSeparation + 'px';
 	        }
-	        if (this.gravity[1] == -1) {
-	            msgbox.element.style.top = this.separation + (after ? after.offsetTop + after.offsetHeight : 0) + 'px';
+	        if (this.gravity[1] < 0) {
+	            msgbox.element.style.top = this.verticalSeparation + (after ? after.offsetTop + after.offsetHeight : 0) + 'px';
 	        }
-	        else if (this.gravity[1] == 1) {
-	            msgbox.element.style.bottom = this.separation + (after ? after.offsetLeft : 0) + 'px';
+	        else {
+	            msgbox.element.style.bottom = (after ? window.innerHeight - after.offsetTop : 0) + this.verticalSeparation + 'px';
 	        }
 	        if (cfg.withClass) {
 	            msgbox.element.classList.add(cfg.withClass);

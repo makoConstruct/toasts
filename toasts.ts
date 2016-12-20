@@ -55,7 +55,8 @@ export class Toasts{
 		lifespan: 'suggested'
 	}
 	fadeDuration:number = 200 //milliseconds
-	separation:number = 20
+	verticalSeparation:number = 20
+	horizontalSeparation:number = 20
 	gravity:[number,number] = [1,-1]
 	messages:Array<MessageBox> = []
 	generate:(msg:string, config:any, invokeDestruction:()=>void)=> any = (msg, config, invokeDestruction)=>{ //creates the html element depending on the message and config. Can be switched out.
@@ -99,6 +100,13 @@ export class Toasts{
 		if(cfg.fadeDuration){ this.fadeDuration = cfg.fadeDuration }
 		if(cfg.gravity){ this.gravity = cfg.gravity }
 		if(cfg.defaults){ copyInObject(this.defaults, cfg.defaults) }
+		if(cfg.separation){
+			this.verticalSeparation = cfg.separation
+			this.horizontalSeparation = cfg.separation
+		}
+		if(cfg.horizontalSeparation){ this.horizontalSeparation = cfg.horizontalSeparation }
+		if(cfg.verticalSeparation){ this.verticalSeparation = cfg.verticalSeparation }
+		
 	}
 	post(msg:string, config:any = {}):()=>void {
 		
@@ -112,14 +120,14 @@ export class Toasts{
 				var i = this.messages.indexOf(msgbox)
 				removeArrayItem(this.messages, i)
 				//reposition remaining items
-				var acc = this.gravity[1] > 0 ?
-					msgbox.element.offsetTop + msgbox.element.offsetHeight :
-					msgbox.element.offsetTop
+				var acc = this.gravity[1] < 0 ?
+					msgbox.element.offsetTop :
+					window.innerHeight - msgbox.element.offsetTop - msgbox.element.offsetHeight
 				document.body.removeChild(msgbox.element)
 				while(i < this.messages.length){
 					var tel = this.messages[i].element
 					positionMessageBoxAlong(tel, acc, this.gravity)
-					acc += this.separation + tel.offsetHeight
+					acc += this.verticalSeparation + tel.offsetHeight
 					++i
 				}
 				
@@ -144,14 +152,15 @@ export class Toasts{
 		)
 		var endMsgbox = this.messages.length ? this.messages[this.messages.length-1] : null
 		var after = endMsgbox&&endMsgbox.element
-		if(this.gravity[0] == -1){
-			msgbox.element.style.left = this.separation+'px'
-		}else if(this.gravity[0] == 1){
-			msgbox.element.style.right = this.separation+'px' }
-		if(this.gravity[1] == -1){
-			msgbox.element.style.top = this.separation + (after ? after.offsetTop + after.offsetHeight : 0) + 'px'
-		}else if(this.gravity[1] == 1){
-			msgbox.element.style.bottom = this.separation + (after ? after.offsetLeft : 0) + 'px'
+		if(this.gravity[0] < 0){
+			msgbox.element.style.left = this.horizontalSeparation+'px'
+		}else{
+			msgbox.element.style.right = this.horizontalSeparation+'px'
+		}
+		if(this.gravity[1] < 0){
+			msgbox.element.style.top = this.verticalSeparation + (after ? after.offsetTop + after.offsetHeight : 0) + 'px'
+		}else{
+			msgbox.element.style.bottom = (after ? window.innerHeight - after.offsetTop : 0) + this.verticalSeparation + 'px'
 		}
 		if(cfg.withClass){ msgbox.element.classList.add(cfg.withClass) }
 		document.body.appendChild(msgbox.element)
